@@ -1,0 +1,38 @@
+{
+  "name": "amazon",
+  "version": "0.0.1",
+  "description": "Scrape Ratings and Reviews from Amazon",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "ava && npm run clean",
+    "watch:test": "ava --watch",
+    "lint": "./node_modules/eslint/bin/eslint.js index.js lib --ext js",
+    "clean": "rm -rf *.csv csv *.zip *.tar *.gz *.xlsx *.xls bqData.json test.json"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "^5.2.0",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "chrono-node": "^2.1.7",
+    "fake-useragent": "^1.0.1",
+    "json2csv": "^5.0.1",
+    "ndjson": "^1.5.0",
+    "puppeteer": "^5.2.1",
+    "puppeteer-page-proxy": "^1.2.8",
+    "query-string": "^6.13.1",
+    "random": "^2.2.0",
+    "typesnitch": "^0.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^25.5.4"
+  },
+  "author": "Markus Feiks <markus@peaksandpies.com>, Daniel Boekhoff <daniel@peaksandpies.com>",
+  "license": "UNLICENSED"
+}
