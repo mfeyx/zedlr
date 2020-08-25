@@ -22,7 +22,7 @@ class Zedlr {
       const ua = useragent()
       await this.page.setUserAgent(ua)
     } else {
-      const pages = await this.browser.getPages()
+      const pages = await this.browser.pages()
       this.page = pages[0]
     }
     await this.page.goto(url)
