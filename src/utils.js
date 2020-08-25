@@ -1,3 +1,4 @@
+const util = require('util');
 const random = require('random')
 const ALPHA = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
@@ -19,10 +20,14 @@ function distinctArray (arr) {
 }
 
 async function distinctArrayAsync (arr) {
-  return Array.from(new Set(arr))
+  return new Promise(resolve => {
+    resolve(distinctArray(arr))
+  })
 }
 
-const wait = ms => new Promise(function (resolve) { setTimeout(resolve, ms) })
+async function wait (ms) {
+  return new Promise(resolve => { setTimeout(resolve, ms) })
+}
 
 function getSleepTime (min, max) {
   return Math.round(random.float(min, max) * random.int(min * 600, max * 400), 0)
