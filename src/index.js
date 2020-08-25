@@ -4,7 +4,7 @@ const useragent = require('fake-useragent')
 class Zedlr {
   constructor (options) {
     this.options = options
-    this.stealth = options.stealth || true
+    this.incognito = options.incognito || true
     this.browser = null
     this.context = null
     this.page = null
@@ -16,11 +16,15 @@ class Zedlr {
   }
 
   async goto (url) {
-    this.context = await this._browserContext()
-    this.page = await this.context.newPage()
-    if (this.stealth) {
+    if (this.incognito) {
+      this.context = await this._browserContext()
+      this.page = await this.context.newPage()
       const ua = useragent()
-      await this.page.setUserAgent(ua) }
+      await this.page.setUserAgent(ua)
+    } else {
+      const pages = await this.browser.getPages()
+      this.page = pages[0]
+    }
     await this.page.goto(url)
   }
 
