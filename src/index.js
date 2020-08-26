@@ -80,14 +80,3 @@ class Zedlr {
 }
 
 module.exports = Zedlr
-
-
-;(async function run () {
-  const zedlr = new Zedlr({ headless: false })
-  const browser = await zedlr.init()
-  await browser.goto('https://www.example.com')
-  const html = await browser.getHtml()
-  console.log(html)
-  await utils.wait(3000)
-  browser.close()
-})()
