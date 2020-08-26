@@ -1,6 +1,6 @@
 {
   "name": "zedlr",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Zedlr is a Wrapper for Puppeteer",
   "main": "src/index.js",
   "scripts": {
@@ -32,5 +32,5 @@
     "jest": "^25.5.4"
   },
   "author": "Markus Feiks <markus@peaksandpies.com>",
-  "license": "ALL RIGHTS RESERVED"
+  "license": "MIT"
 }
