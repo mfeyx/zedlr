@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer')
 const useragent = require('fake-useragent')
-const utils = require('./utils')
 
 class Zedlr {
   constructor (options) {
